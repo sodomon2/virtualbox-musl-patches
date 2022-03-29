@@ -14,7 +14,7 @@
  # include <strings.h>       /* bzero & bcopy.*/
 --- a/src/VBox/HostDrivers/adpctl/VBoxNetAdpCtl.cpp
 +++ b/src/VBox/HostDrivers/adpctl/VBoxNetAdpCtl.cpp
-@@ -37,9 +37,9 @@
+@@ -46,9 +46,9 @@
  # include <linux/types.h>
  /* Older versions of ethtool.h rely on these: */
  typedef unsigned long long u64;
@@ -27,7 +27,7 @@
  # include <limits.h> /* for INT_MAX */
  # include <linux/ethtool.h>
  # include <linux/sockios.h>
-@@ -571,7 +571,7 @@
+@@ -626,7 +626,7 @@
      snprintf(IfReq.ifr_name, sizeof(IfReq.ifr_name), "%s", pszName);
  
      EthToolVal.cmd = ETHTOOL_GLINK;
@@ -36,7 +36,7 @@
      int rc = ioctl(fd, SIOCETHTOOL, &IfReq);
      if (rc == 0)
      {
-@@ -580,7 +580,7 @@
+@@ -635,7 +635,7 @@
              memset(&IfReq, 0, sizeof(IfReq));
              snprintf(IfReq.ifr_name, sizeof(IfReq.ifr_name), "%s", pszName);
              EthToolReq.cmd = ETHTOOL_GSET;

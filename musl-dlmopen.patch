@@ -1,6 +1,6 @@
 --- a/src/VBox/HostDrivers/Support/Makefile.kmk
 +++ b/src/VBox/HostDrivers/Support/Makefile.kmk
-@@ -456,10 +456,6 @@
+@@ -471,10 +471,6 @@
  	IN_DIS_STATIC \
   	DIS_CORE_ONLY \
   	LOG_DISABLED
@@ -10,3 +10,4 @@
 - 	SUP_HARDENED_WITH_DLMOPEN
  
   SUPR3HardenedStatic_INCS += $(VBOX_PATH_RUNTIME_SRC)/include
+ 

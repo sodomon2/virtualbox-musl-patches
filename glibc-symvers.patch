@@ -28,16 +28,3 @@
  #endif
  
  /* Do not use ISO C99 scanf which has a glibc 2.7 dependency. */
---- a/src/VBox/Additions/x11/VBoxClient/chk_stubs.c
-+++ b/src/VBox/Additions/x11/VBoxClient/chk_stubs.c
-@@ -50,8 +50,9 @@
-  * supc++ and gcc_eh contain references which we cannot change. */
- 
- extern void *__wrap_memcpy(void *dest, const void *src, size_t n);
--
-+#if defined(__GLIBC__)
- asm (".symver memcpy, memcpy@GLIBC_2.2.5");
-+#endif
- void *__wrap_memcpy(void *dest, const void *src, size_t n)
- {
-     return memcpy(dest, src, n);
