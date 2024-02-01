@@ -1,6 +1,6 @@
 --- a/include/iprt/linux/symvers.h
 +++ b/include/iprt/linux/symvers.h
-@@ -39,12 +39,14 @@
+@@ -49,12 +49,14 @@
  /* Use versions of glibc symbols which are available in 32-bit EL3 or
   * 64-bit EL4.  Currently only those symbols needed by the Additions,
   * though this could probably be extended to work for host builds too. */
@@ -15,7 +15,7 @@
  
  /* Do not use *_chk functions */
  #undef _FORTIFY_SOURCE
-@@ -67,10 +69,12 @@
+@@ -77,10 +79,12 @@
  #ifdef fnctl
  # undef fcntl
  #endif
